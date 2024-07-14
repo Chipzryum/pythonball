@@ -1,0 +1,51 @@
+''' Task 1: Setting up! '''
+# Uncomment the lines of code 
+
+import pygame
+import time
+pygame.init()
+
+# Create a screen with 500x300 size
+screen = pygame.display.set_mode((500, 300))
+
+# Create 3 variables- y, direction, and counter
+# Y will be the Y-axis of the ball, set to 1
+# Direction is the direction of the ball, set to 1
+# Counter is the number of bounces, set to 0
+# Create running variable, set it to True
+
+y = 1
+direction = 1
+counter = 0
+running = True
+''' Task 2: Drawing the ball and screen '''
+# Now create a while running loop
+while running:
+  # draw a white screen(255,255,255)
+  screen.fill((255, 255, 255))
+    
+  # Uncomment the lines of code to create a red ball that is bouncing
+  pygame.draw.circle(screen,(255,0,0),(100,y),30,0)
+    # We will now increase the y-axis along direction
+  y=y+direction 
+  time.sleep(.006)
+
+    # Add a display.update
+  pygame.display.update()
+
+
+
+   # Now add an if and elif condition
+  if y == 300:
+    direction = -1
+    counter = counter+1
+  elif y ==0:
+    direction = 1
+    counter = counter+1
+    print(counter)
+  
+
+
+    # 1) If y is 300, then direction should change to -1
+    # 2) else if y is 0, then direction should change to 1. Increase counter
+    # Finally, let’s print the counter
